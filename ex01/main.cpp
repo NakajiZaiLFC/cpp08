@@ -77,9 +77,9 @@ int main() {
 		Span sp(2); sp.addNumber(-2147483648); sp.addNumber(2147483647);
 		std::cout << "\033[1;33m[7] INT_MIN / INT_MAX\033[0m" << std::endl;
 		std::cout << "  store: {-2147483648, 2147483647}" << std::endl;
-		int s = sp.shortestSpan(); int l = sp.longestSpan();
-		std::cout << "  shortest: " << (unsigned int)s << " (expected 4294967295)" << std::endl;
-		std::cout << "  longest : " << (unsigned int)l << " (expected 4294967295)" << std::endl;
+		unsigned int s = sp.shortestSpan(); unsigned int l = sp.longestSpan();
+		std::cout << "  shortest: " << s << " (expected 4294967295)" << std::endl;
+		std::cout << "  longest : " << l << " (expected 4294967295)" << std::endl;
 		std::cout << std::endl;
 	}
 
@@ -117,16 +117,3 @@ int main() {
 	std::cout << "\033[1;36m========================================\033[0m" << std::endl;
 	return 0;
 }
-
-// int main()
-// {
-// 	Span sp = Span(5);
-// 	sp.addNumber(6);
-// 	sp.addNumber(3);
-// 	sp.addNumber(17);
-// 	sp.addNumber(9);
-// 	sp.addNumber(11);
-// 	std::cout << sp.shortestSpan() << std::endl;
-// 	std::cout << sp.longestSpan() << std::endl;
-// 	return 0;
-// }

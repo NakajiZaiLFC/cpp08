@@ -5,14 +5,14 @@
 
 class Span {
 public:
-	Span(unsigned int n);
+	explicit Span(unsigned int n);
 	Span(const Span &other);
 	Span &operator=(const Span &other);
 	~Span();
 
 	void addNumber(int num);
-	int shortestSpan() const;
-	int longestSpan() const;
+	unsigned int shortestSpan() const;
+	unsigned int longestSpan() const;
 
 private:
 	Span();
