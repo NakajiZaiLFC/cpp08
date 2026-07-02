@@ -32,4 +32,8 @@ check:
 		&& echo "RESULT: \033[1;31mKO\033[0m (banned pattern found)" && exit 1 \
 		|| echo "RESULT: \033[1;32mOK\033[0m (no banned patterns)"
 
-.PHONY: all clean fclean re check
+run:re
+	clear
+	valgrind --leak-check=full --show-leak-kinds=all -q ./$(NAME)
+
+.PHONY: all clean fclean re check run
